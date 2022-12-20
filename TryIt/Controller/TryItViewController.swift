@@ -44,6 +44,7 @@ class TryItViewController: UIViewController {
         priceTextView.text = ""
         accessibilityTextView.text = ""
         linkTextView.text = ""
+          
         
     }
     
