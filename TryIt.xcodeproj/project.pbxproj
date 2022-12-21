@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8877FB51295284700050D7BD /* TryItService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB50295284700050D7BD /* TryItService.swift */; };
+		8877FB53295296C90050D7BD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB52295296C90050D7BD /* DetailsViewController.swift */; };
+		8877FB55295296E30050D7BD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB54295296E30050D7BD /* FavoritesViewController.swift */; };
+		8877FB5729529B610050D7BD /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB5629529B610050D7BD /* FavoriteTableViewCell.swift */; };
 		88792F762951B538009E5732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88792F752951B538009E5732 /* AppDelegate.swift */; };
 		88792F782951B538009E5732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88792F772951B538009E5732 /* SceneDelegate.swift */; };
 		88792F7D2951B538009E5732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88792F7B2951B538009E5732 /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8877FB50295284700050D7BD /* TryItService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItService.swift; sourceTree = "<group>"; };
+		8877FB52295296C90050D7BD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		8877FB54295296E30050D7BD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8877FB5629529B610050D7BD /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		88792F722951B538009E5732 /* TryIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88792F752951B538009E5732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88792F772951B538009E5732 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				88792F7B2951B538009E5732 /* Main.storyboard */,
+				8877FB5629529B610050D7BD /* FavoriteTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				8893E39C2951E63300EE390E /* TryItViewController.swift */,
+				8877FB50295284700050D7BD /* TryItService.swift */,
+				8877FB52295296C90050D7BD /* DetailsViewController.swift */,
+				8877FB54295296E30050D7BD /* FavoritesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,10 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8877FB51295284700050D7BD /* TryItService.swift in Sources */,
 				88792F762951B538009E5732 /* AppDelegate.swift in Sources */,
+				8877FB55295296E30050D7BD /* FavoritesViewController.swift in Sources */,
 				8893E39A2951E21500EE390E /* TryIt.swift in Sources */,
 				88792F782951B538009E5732 /* SceneDelegate.swift in Sources */,
+				8877FB5729529B610050D7BD /* FavoriteTableViewCell.swift in Sources */,
 				8893E39D2951E63300EE390E /* TryItViewController.swift in Sources */,
+				8877FB53295296C90050D7BD /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
