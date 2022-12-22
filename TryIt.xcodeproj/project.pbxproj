@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8814DF912952F2DF00AE3752 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814DF902952F2DF00AE3752 /* DetailTableViewController.swift */; };
+		8814DF932952FC0A00AE3752 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814DF922952FC0A00AE3752 /* FavoritesTableViewController.swift */; };
+		8814DF95295308A100AE3752 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814DF94295308A100AE3752 /* UIColor+Theme.swift */; };
+		88569E7E2953C91C00C8480B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88569E7D2953C91C00C8480B /* InfoViewController.swift */; };
+		886F3141295477C50085FBBB /* TryItDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 886F313F295477C50085FBBB /* TryItDataModel.xcdatamodeld */; };
 		8877FB51295284700050D7BD /* TryItService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB50295284700050D7BD /* TryItService.swift */; };
-		8877FB53295296C90050D7BD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB52295296C90050D7BD /* DetailsViewController.swift */; };
-		8877FB55295296E30050D7BD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB54295296E30050D7BD /* FavoritesViewController.swift */; };
 		8877FB5729529B610050D7BD /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877FB5629529B610050D7BD /* FavoriteTableViewCell.swift */; };
 		88792F762951B538009E5732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88792F752951B538009E5732 /* AppDelegate.swift */; };
 		88792F782951B538009E5732 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88792F772951B538009E5732 /* SceneDelegate.swift */; };
@@ -21,9 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8814DF902952F2DF00AE3752 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		8814DF922952FC0A00AE3752 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		8814DF94295308A100AE3752 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		88569E7D2953C91C00C8480B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		886F3140295477C50085FBBB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8877FB50295284700050D7BD /* TryItService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryItService.swift; sourceTree = "<group>"; };
-		8877FB52295296C90050D7BD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		8877FB54295296E30050D7BD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8877FB5629529B610050D7BD /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		88792F722951B538009E5732 /* TryIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88792F752951B538009E5732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		886F313E295477A10085FBBB /* DatabseServices */ = {
+			isa = PBXGroup;
+			children = (
+				886F313F295477C50085FBBB /* TryItDataModel.xcdatamodeld */,
+			);
+			path = DatabseServices;
+			sourceTree = "<group>";
+		};
 		88792F692951B538009E5732 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +80,7 @@
 		88792F742951B538009E5732 /* TryIt */ = {
 			isa = PBXGroup;
 			children = (
+				886F313E295477A10085FBBB /* DatabseServices */,
 				88792F752951B538009E5732 /* AppDelegate.swift */,
 				88792F772951B538009E5732 /* SceneDelegate.swift */,
 				8893E3962951E1BA00EE390E /* Extension */,
@@ -90,6 +105,7 @@
 		8893E3962951E1BA00EE390E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8814DF94295308A100AE3752 /* UIColor+Theme.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -108,8 +124,9 @@
 			children = (
 				8893E39C2951E63300EE390E /* TryItViewController.swift */,
 				8877FB50295284700050D7BD /* TryItService.swift */,
-				8877FB52295296C90050D7BD /* DetailsViewController.swift */,
-				8877FB54295296E30050D7BD /* FavoritesViewController.swift */,
+				8814DF902952F2DF00AE3752 /* DetailTableViewController.swift */,
+				8814DF922952FC0A00AE3752 /* FavoritesTableViewController.swift */,
+				88569E7D2953C91C00C8480B /* InfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,12 +204,15 @@
 			files = (
 				8877FB51295284700050D7BD /* TryItService.swift in Sources */,
 				88792F762951B538009E5732 /* AppDelegate.swift in Sources */,
-				8877FB55295296E30050D7BD /* FavoritesViewController.swift in Sources */,
 				8893E39A2951E21500EE390E /* TryIt.swift in Sources */,
+				8814DF95295308A100AE3752 /* UIColor+Theme.swift in Sources */,
+				88569E7E2953C91C00C8480B /* InfoViewController.swift in Sources */,
+				8814DF932952FC0A00AE3752 /* FavoritesTableViewController.swift in Sources */,
+				8814DF912952F2DF00AE3752 /* DetailTableViewController.swift in Sources */,
 				88792F782951B538009E5732 /* SceneDelegate.swift in Sources */,
 				8877FB5729529B610050D7BD /* FavoriteTableViewCell.swift in Sources */,
+				886F3141295477C50085FBBB /* TryItDataModel.xcdatamodeld in Sources */,
 				8893E39D2951E63300EE390E /* TryItViewController.swift in Sources */,
-				8877FB53295296C90050D7BD /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +364,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +390,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,6 +426,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		886F313F295477C50085FBBB /* TryItDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				886F3140295477C50085FBBB /* Model.xcdatamodel */,
+			);
+			currentVersion = 886F3140295477C50085FBBB /* Model.xcdatamodel */;
+			path = TryItDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 88792F6A2951B538009E5732 /* Project object */;
 }

@@ -13,12 +13,12 @@ class TryItViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var showActivityButton: UIButton!
     @IBOutlet weak var showDetailsButton: UIButton!
-    @IBOutlet weak var activitTextView: UITextView!
-    @IBOutlet weak var typeTextView: UITextView!
-    @IBOutlet weak var participantTextView: UITextView!
-    @IBOutlet weak var priceTextView: UITextView!
-    @IBOutlet weak var accessibilityTextView: UITextView!
-    @IBOutlet weak var linkTextView: UITextView!
+    @IBOutlet weak var activityTextLabel: UILabel!
+    @IBOutlet weak var typeTextLabel: UILabel!
+    @IBOutlet weak var participantsTextLabel: UILabel!
+    @IBOutlet weak var priceTextLabel: UILabel!
+    @IBOutlet weak var accessibilityTextLabel: UILabel!
+    @IBOutlet weak var linkTextLabel: UILabel!
     @IBOutlet weak var activityGifView: UIActivityIndicatorView!
     
     var currentTryIt : TryIt?
@@ -26,92 +26,102 @@ class TryItViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initUi()
-    }
-    
-    func initUi() {
+        //Background Image zeigt
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "backimage")
         
+        initUi()        
+    }
+    //zeigt Variablen zunächst als leer an
+    func initUi() {
         activityGifView.stopAnimating()
         showDetailsButton.isHidden = true
-        activitTextView.isHidden = true
-        typeTextView.isHidden = true
-        participantTextView.isHidden = true
-        priceTextView.isHidden = true
-        accessibilityTextView.isHidden = true
-        linkTextView.isHidden = true
+        activityTextLabel.isHidden = true
+        typeTextLabel.isHidden = true
+        participantsTextLabel.isHidden = true
+        priceTextLabel.isHidden = true
+        accessibilityTextLabel.isHidden = true
+        linkTextLabel.isHidden = true
         
-        activitTextView.text = ""
-        typeTextView.text = ""
-        participantTextView.text = ""
-        priceTextView.text = ""
-        accessibilityTextView.text = ""
-        linkTextView.text = ""
-        
+        activityTextLabel.text = ""
+        typeTextLabel.text = ""
+        participantsTextLabel.text = ""
+        priceTextLabel.text = ""
+        accessibilityTextLabel.text = ""
+        linkTextLabel.text = ""
         
     }  
-    
+    //Funktion zeigt, erneuert Variablen
     func updateUI() {
         guard let tryIt = self.currentTryIt else {
-            activitTextView.text = ""
-            typeTextView.text = ""
-            participantTextView.text = ""
-            priceTextView.text = ""
-            accessibilityTextView.text = ""
-            linkTextView.text = ""
-            typeTextView.isHidden = true
-            participantTextView.isHidden = true
-            priceTextView.isHidden = true
-            accessibilityTextView.isHidden = true
-            linkTextView.isHidden = true
+            activityTextLabel.text = ""
+            typeTextLabel.text = ""
+            participantsTextLabel.text = ""
+            priceTextLabel.text = ""
+            accessibilityTextLabel.text = ""
+            linkTextLabel.text = ""
+            typeTextLabel.isHidden = true
+            participantsTextLabel.isHidden = true
+            priceTextLabel.isHidden = true
+            accessibilityTextLabel.isHidden = true
+            linkTextLabel.isHidden = true
             return
         }
-        accessibilityTextView.text = tryIt.activity
-        typeTextView.text = tryIt.type
-        participantTextView.text = "\(tryIt.participants)"
-        priceTextView.text = "\(tryIt.price)"
-        accessibilityTextView.text = "\(tryIt.accessibility)"
-        linkTextView.text = tryIt.link
+            showDetailsButton.isHidden = false
+            activityTextLabel.isHidden = false
+            activityTextLabel.text = tryIt.activity
+            typeTextLabel.text = "Type: \(tryIt.type ?? "")"
+            priceTextLabel.text = "Kostet etwa \((tryIt.price ?? 0.0)*100) Euro!"
+            accessibilityTextLabel.text = "Dabei haben \((tryIt.accessibility ?? 0.0)*100)% Schwierigkeinten!"
+            participantsTextLabel.text = "Kann mit \(tryIt.participants ?? 0) person(en) durchgeführt weden"
+            linkTextLabel.text = tryIt.link
     }
+    
+    //Funktion zeigt Aktivität an
     func showActivity() {
         activateUI(enabled: false)
         
         TryItService.shared.loadShowTryIt { tryIt in
+            
             OperationQueue.main.addOperation {
                 self.activateUI(enabled: true)
                 self.currentTryIt = tryIt
                 self.updateUI()
             }
-        }errorBlock: { error in
+            
+        } errorBlock: { error in
+            
             OperationQueue.main.addOperation {
                 self.activateUI(enabled: true)
-                let alertView = UIAlertController(title: "Wrong!", message: error, preferredStyle: .alert)
+                let alertView = UIAlertController(title: "Error!", message: error, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel)
                 alertView.addAction(okAction)
                 self.present(alertView, animated: true)
             }
         }
     }
-    
+    // Funktion zeigt activityView
     func activateUI(enabled: Bool) {
         showActivityButton.isEnabled = enabled
         showDetailsButton.isEnabled = enabled
         enabled ? activityGifView.stopAnimating() : activityGifView.startAnimating()
     }
-    
-    
+    // Button, die neue Aktivität bringt
     @IBAction func showActivityButtonTouched(_ sender: UIButton) {
         self.currentTryIt = nil
         updateUI()
         showActivity()
     }
+    // Button für detaillierte Informationen
     @IBAction func showDetailsButtonTouched(_ sender: UIButton) {
         sender.isHidden = true
-        typeTextView.isHidden = false
-        participantTextView.isHidden = false
-        priceTextView.isHidden = false
-        accessibilityTextView.isHidden = false
-        linkTextView.isHidden = false
+        typeTextLabel.isHidden = false
+        participantsTextLabel.isHidden = false
+        priceTextLabel.isHidden = false
+        accessibilityTextLabel.isHidden = false
+        linkTextLabel.isHidden = false
     }
+    //speichern button
     @IBAction func saveButtonTouched(_ sender: Any) {
         if let currentTryIt = currentTryIt {
             var titleText: String = ""
@@ -126,4 +136,9 @@ class TryItViewController: UIViewController {
         }
     }
     
+    // informationbutton
+    
+    @IBAction func infoButtonTouched(_ sender: Any) {
+        performSegue(withIdentifier: "InfoSegue", sender: nil)
+    }
 }

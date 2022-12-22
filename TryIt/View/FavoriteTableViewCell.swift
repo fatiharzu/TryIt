@@ -9,15 +9,27 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
 
+    //Favotite Cell Label
+    @IBOutlet weak var activityLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
-
+    //Ändert die Farben der ausgewählten Linien
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        
+        if selected {
+            activityLabel.textColor = UIColor.black
+            backgroundColor = UIColor.TryIt.color3
+        }else{
+            activityLabel.textColor = UIColor.white
+            backgroundColor = UIColor.TryIt.color2
+        }
 
-        // Configure the view for the selected state
+        
     }
 
 }

@@ -7,12 +7,13 @@
 
 import Foundation
 
+// Deklarieren von Variablentypen in der Bored-API
+
 struct TryIt: Codable {
-    let key: Int
-    let type: String
-    let activity: String
-    let participants: Int
-    let price: Int
-    let accessibility: Double
-    let link: String
+    let activity, type: String?
+    let participants: Int?
+    let price: Double?
+    let link: String?
+    let key: String?
+    let accessibility: Double?
 }
